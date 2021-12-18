@@ -1,0 +1,24 @@
+package javaPkg;
+
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+
+public class JavaStream {
+
+	public static void main(String[] args) {
+		
+		///To get the sum of array by using Stream
+		List<Integer> ls = Arrays.asList(1,2,3,4,5);
+		Optional<Integer> sum_of_List=ls.stream().reduce((x,y)->x+y);
+		System.out.println("the sum of array is ="+sum_of_List);
+		
+		///To get the Average  of array by using Stream
+				List<Integer> ls01 = Arrays.asList(1,2,3,4,5);
+				Double avg= ls01.stream().mapToInt(e->e).average().getAsDouble();
+				System.out.println("the Average of array is ="+avg);
+
+	}
+
+}
